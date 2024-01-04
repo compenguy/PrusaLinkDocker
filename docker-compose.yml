@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  prusalink:
+    restart: unless-stopped
+    #network_mode: host
+    devices:
+      # use `python3 -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
+      - "/dev/ttyACM0:/dev/ttyACM0"
+    ports:
+      - 8008:80
+    volumes:
+      - prusalink:/prusalink
+    stdin_open: true
+    tty: true
+
+volumes:
+  prusalink:
