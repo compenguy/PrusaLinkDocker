@@ -38,4 +38,6 @@ RUN useradd -rm -d /home/pi -s /bin/bash -g dialout pi
 USER pi
 WORKDIR /home/pi
 
-CMD ["prusalink"]
+# For debugging
+#CMD ["prusalink", "-f", "-i"]
+CMD ["prusalink", "-f"]

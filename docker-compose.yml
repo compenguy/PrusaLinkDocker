@@ -8,8 +8,13 @@ services:
     devices:
       # use `python3 -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
       - "/dev/ttyACM0:/dev/ttyACM0"
+    volumes:
+      - prusalink:/home/pi
     ports:
       - 8008:8080
-    #stdin_open: true
-    #tty: true
+    stdin_open: true
+    tty: true
     #entrypoint: /bin/bash
+
+volumes:
+  prusalink:
