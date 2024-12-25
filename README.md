@@ -19,7 +19,7 @@ $ python3 -m serial.tools.miniterm
 
 ### Camera enablement
 
-TBD
+I've been unsuccessful so far enabling the camera support with a standard USB webcam.
 
 ## Running
 
@@ -31,4 +31,5 @@ docker-compose up -d
 
 Then opening up http://<your server ip>:8008/ in a browser and going through
 the configuration steps presented.  The printer configuration settings will be
-stored in a docker volume called `prusalink`.
+stored in a docker volume called `prusalink` (actually `prusalink_prusalink` as
+docker-compose generates it with the container name and the volume name).

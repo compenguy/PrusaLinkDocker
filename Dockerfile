@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM debian:bookworm-slim as prusalink_builder
+FROM debian:bookworm-slim AS prusalink_builder
 
 # From https://github.com/prusa3d/Prusa-Link/blob/master/image_builder/image_builder.py
 # except for pi-only deps: pigpio python3-libcamera
