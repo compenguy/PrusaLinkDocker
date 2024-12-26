@@ -31,12 +31,13 @@ RUN apt-get update \
 
 COPY --from=prusalink_builder /usr/local/ /usr/local/
 RUN mkdir -p /etc/prusalink
-COPY prusalink.ini /etc/prusalink/
 
-RUN useradd -rm -d /home/pi -s /bin/bash -g dialout pi
+RUN groupadd -g 1000 prusalink \
+    && useradd -rm -u 1000 -d /home/prusalink -s /bin/bash -g prusalink -G dialout,video prusalink \
+    && usermod -aG video prusalink
 
-USER pi
-WORKDIR /home/pi
+USER prusalink
+WORKDIR /home/prusalink
 
 # For debugging
 #CMD ["prusalink", "-f", "-i"]
