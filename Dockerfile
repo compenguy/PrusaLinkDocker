@@ -31,7 +31,6 @@ RUN apt-get update \
 
 COPY --from=prusalink_builder /usr/local/ /usr/local/
 RUN mkdir -p /etc/prusalink
-COPY prusalink.ini /etc/prusalink/
 
 RUN useradd -rm -d /home/pi -s /bin/bash -g dialout pi
 
